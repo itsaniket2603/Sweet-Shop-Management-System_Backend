@@ -1,44 +1,44 @@
-🍬 Sweet Shop Management System – Backend
+## 🍬 Sweet Shop Management System – Backend
 
-A robust, secure, and scalable backend for the Sweet Shop Management System, built using Node.js, Express, MongoDB, and JWT authentication, following clean coding practices and Test-Driven Development (TDD) principles.
+## A robust, secure, and scalable backend for the Sweet Shop Management System, built using Node.js, Express, MongoDB, and JWT authentication, following clean coding practices and Test-Driven Development (TDD) principles.
 
-📌 Project Overview
+## Project Overview
 
-This backend serves as the core engine of the Sweet Shop Management System.
-It provides secure APIs for:
+# This backend serves as the core engine of the Sweet Shop Management System.
+# It provides secure APIs for:
 
-User authentication (Admin & User)
+# User authentication (Admin & User)
 
-Sweet inventory management
+# Sweet inventory management
 
-Purchase & stock control
+# Purchase & stock control
 
-Role-based access control (RBAC)
+# Role-based access control (RBAC)
 
-The system ensures data consistency, security, and real-world readiness.
+# The system ensures data consistency, security, and real-world readiness.
 
-🛠 Tech Stack
+# 🛠 Tech Stack
 
-Runtime: Node.js
+# Runtime: Node.js
 
 Framework: Express.js
 
 Database: MongoDB (Mongoose ODM)
-
+ 
 Authentication: JWT (JSON Web Token)
 
-Password Security: bcryptjs
+# Password Security: bcryptjs
 
-CORS Handling: cors
+# CORS Handling: cors
 
-Environment Config: dotenv
+# Environment Config: dotenv
 
-Testing (Planned / Implemented): Jest / Supertest
+# Testing (Planned / Implemented): Jest / Supertest
 
-Deployment: Render
+# Deployment: Render
 
-📁 Folder Structure (Detailed)
-backend/
+## 📁 Folder Structure (Detailed)
+## backend/
 │
 ├── src/
 │   ├── config/
@@ -83,7 +83,7 @@ backend/
 │
 └── README.md
 
-🔐 Authentication & Authorization
+### Authentication & Authorization
 User Roles
 
 User → Can view & purchase sweets
@@ -100,7 +100,7 @@ Token is sent in Authorization: Bearer <token>
 
 Middleware validates token on protected routes
 
-📡 API Endpoints
+#  📡 API Endpoints
 🔑 Auth Routes
 Method	Endpoint	Description
 POST	/api/auth/register	Register a new user
