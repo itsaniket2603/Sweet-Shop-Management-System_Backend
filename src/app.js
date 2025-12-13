@@ -5,22 +5,18 @@ import sweetRoutes from "./routes/sweet.routes.js";
 
 const app = express();
 
-/* ✅ PERFECT CORS SETUP */
+/* ✅ PERFECT CORS (Express v5 compatible) */
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://sweet-shop-management-system-fronte-neon.vercel.app"
+      "https://sweet-shop-management-system-fronte-neon.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
-
-// 🔥 VERY IMPORTANT (preflight)
-app.options("*", cors());
-
 
 app.use(express.json());
 
