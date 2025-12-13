@@ -5,13 +5,14 @@ import sweetRoutes from "./routes/sweet.routes.js";
 
 const app = express();
 
-// ✅ CORS FIX
+/* ✅ PERFECT CORS SETUP */
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://sweet-shop-management-system-fronte-silk.vercel.app"
+      "https://sweet-shop-management-system-fronte-neon.vercel.app"
     ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
