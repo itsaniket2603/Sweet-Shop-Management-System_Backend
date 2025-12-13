@@ -3,22 +3,21 @@ import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
 import sweetRoutes from "./routes/sweet.routes.js";
 
-const app = express();
+const app = express;
 
-/* ✅ BULLETPROOF CORS CONFIG */
+/* ✅ FINAL CORS CONFIG */
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://sweet-shop-management-system-fronte-one.vercel.app"
-    ],
+    origin: "https://sweet-shop-management-system-fronte-xi.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: false, // VERY IMPORTANT
+    credentials: false,
   })
 );
 
-/* ✅ Preflight handled automatically */
+/* ✅ Handle preflight */
+app.options("*", cors());
+
 app.use(express.json());
 
 /* ROUTES */
