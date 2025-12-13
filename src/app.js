@@ -8,7 +8,10 @@ const app = express();
 // ✅ CORS FIX
 app.use(
   cors({
-    origin: "http://localhost:5173", // frontend URL
+    origin: [
+      "http://localhost:5173",
+      "https://sweet-shop-management-system-fronte-silk.vercel.app"
+    ],
     credentials: true,
   })
 );
