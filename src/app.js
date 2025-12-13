@@ -12,10 +12,15 @@ app.use(
       "http://localhost:5173",
       "https://sweet-shop-management-system-fronte-neon.vercel.app"
     ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
+
+// 🔥 VERY IMPORTANT (preflight)
+app.options("*", cors());
+
 
 app.use(express.json());
 
