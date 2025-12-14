@@ -27,14 +27,15 @@ Authentication: JWT (JSON Web Token)
 
 ### CORS Handling: cors
 
-# Environment Config: dotenv
+## Environment Config: dotenv
 
-# Testing (Planned / Implemented): Jest / Supertest
+## Testing (Planned / Implemented): Jest / Supertest
 
-# Deployment: Render
+## Deployment: Render
 
 ## 📁 Folder Structure (Detailed)
-## backend/
+## backend
+
 │
 ├── src/
 │   ├── config/
