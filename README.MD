@@ -4,22 +4,18 @@
 
 ## Project Overview
 
-# This backend serves as the core engine of the Sweet Shop Management System.
-# It provides secure APIs for:
+### This backend serves as the core engine of the Sweet Shop Management System.
+### It provides secure APIs for:
 
-# User authentication (Admin & User)
+### Sweet inventory management
 
-# Sweet inventory management
+### Role-based access control (RBAC)
 
-# Purchase & stock control
+### The system ensures data consistency, security, and real-world readiness.
 
-# Role-based access control (RBAC)
+### 🛠 Tech Stack
 
-# The system ensures data consistency, security, and real-world readiness.
-
-# 🛠 Tech Stack
-
-# Runtime: Node.js
+### Runtime: Node.js
 
 Framework: Express.js
 
@@ -27,9 +23,9 @@ Database: MongoDB (Mongoose ODM)
  
 Authentication: JWT (JSON Web Token)
 
-# Password Security: bcryptjs
+## Password Security: bcryptjs
 
-# CORS Handling: cors
+### CORS Handling: cors
 
 # Environment Config: dotenv
 
@@ -164,7 +160,7 @@ npm run dev
 npm start
 
 
-Server runs at:
+## Server runs at:
 
 http://localhost:5002
 
@@ -195,7 +191,7 @@ Improving README documentation
 
 Reflection
 
-AI significantly improved development speed and debugging efficiency.
+## AI significantly improved development speed and debugging efficiency.
 However, all final logic, validations, and architectural decisions were manually reviewed and implemented to ensure correctness and understanding.
 
 ✅ Conclusion
