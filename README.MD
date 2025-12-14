@@ -1,6 +1,6 @@
-## 🍬 Sweet Shop Management System – Backend
+### 🍬 Sweet Shop Management System – Backend
 
-## A robust, secure, and scalable backend for the Sweet Shop Management System, built using Node.js, Express, MongoDB, and JWT authentication, following clean coding practices and Test-Driven Development (TDD) principles.
+### A robust, secure, and scalable backend for the Sweet Shop Management System, built using Node.js, Express, MongoDB, and JWT authentication, following clean coding practices and Test-Driven Development (TDD) principles.
 
 ## Project Overview
 
