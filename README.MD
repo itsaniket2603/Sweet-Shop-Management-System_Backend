@@ -1,177 +1,174 @@
 ### 🍬 Sweet Shop Management System – Backend
 
-### A robust, secure, and scalable backend for the Sweet Shop Management System, built using Node.js, Express, MongoDB, and JWT authentication, following clean coding practices and Test-Driven Development (TDD) principles.
+### 📌 Project Overview
+Sweet Shop Management System Backend ek secure, scalable aur production-ready REST API hai jo authentication, inventory management aur role-based access control handle karta hai.  
+Yeh backend frontend SPA ko power karta hai aur real-world business rules follow karta hai.
 
-## Project Overview
+---
 
-### This backend serves as the core engine of the Sweet Shop Management System.
-### It provides secure APIs for:
+### 🎯 Key Objectives
+- Secure authentication using JWT
+- Role-based access (User & Admin)
+- Reliable inventory management
+- Clean API architecture
+- Test-driven and scalable design
 
-### Sweet inventory management
-
-### Role-based access control (RBAC)
-
-### The system ensures data consistency, security, and real-world readiness.
+---
 
 ### 🛠 Tech Stack
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT (jsonwebtoken)
+- bcryptjs
+- cors
+- dotenv
 
-### Runtime: Node.js
+---
 
-Framework: Express.js
-
-Database: MongoDB (Mongoose ODM)
- 
-Authentication: JWT (JSON Web Token)
-
-## Password Security: bcryptjs
-
-### CORS Handling: cors
-
-## Environment Config: dotenv
-
-## Testing (Planned / Implemented): Jest / Supertest
-
-## Deployment: Render
-
-## 📁 Folder Structure (Detailed)
-## backend
-
+### 📁 Folder Structure
+backend/
 │
 ├── src/
-│   ├── config/
-│   │   └── db.js
-│   │       → MongoDB connection logic
+│ ├── config/
+│ │ └── db.js
+│ │ → MongoDB connection setup
 │
-│   ├── controllers/
-│   │   ├── auth.controller.js
-│   │   │   → Handles user registration & login
-│   │   └── sweet.controller.js
-│   │       → Handles sweets CRUD, purchase & restock logic
+│ ├── controllers/
+│ │ ├── auth.controller.js
+│ │ │ → User registration & login logic
+│ │ └── sweet.controller.js
+│ │ → Sweet CRUD, purchase & restock logic
 │
-│   ├── middleware/
-│   │   ├── auth.middleware.js
-│   │   │   → JWT token verification
-│   │   └── admin.middleware.js
-│   │       → Restricts admin-only routes
+│ ├── middleware/
+│ │ ├── auth.middleware.js
+│ │ │ → JWT token verification
+│ │ └── admin.middleware.js
+│ │ → Admin-only route protection
 │
-│   ├── models/
-│   │   ├── User.js
-│   │   │   → User schema (name, email, password, role)
-│   │   └── Sweet.js
-│   │       → Sweet schema (name, category, price, quantity)
+│ ├── models/
+│ │ ├── User.js
+│ │ │ → User schema (name, email, password, role)
+│ │ └── Sweet.js
+│ │ → Sweet schema (name, category, price, quantity)
 │
-│   ├── routes/
-│   │   ├── auth.routes.js
-│   │   │   → Authentication endpoints
-│   │   └── sweet.routes.js
-│   │       → Sweet & inventory endpoints
+│ ├── routes/
+│ │ ├── auth.routes.js
+│ │ │ → Authentication routes
+│ │ └── sweet.routes.js
+│ │ → Sweet & inventory routes
 │
-│   ├── app.js
-│   │   → Express app configuration (middlewares & routes)
-│   │
-│   └── server.js
-│       → App bootstrap & server startup
+│ ├── app.js
+│ │ → Express app configuration
+│ │
+│ └── server.js
+│ → Server bootstrap
 │
 ├── .env
-│   → Environment variables (DB URI, JWT secret)
+│ → Environment variables
 │
 ├── package.json
-│   → Project metadata & scripts
+│ → Dependencies & scripts
 │
 └── README.md
 
-### Authentication & Authorization
-User Roles
 
-User → Can view & purchase sweets
+---
 
-Admin → Full inventory control (add/update/delete/restock)
+### 🔐 Authentication & Authorization
+- JWT-based authentication
+- Tokens include user ID & role
+- Middleware validates token on protected routes
+- Admin routes restricted using role validation
 
-JWT Flow
+---
 
-User logs in
+### 🔑 Authentication APIs
+| Method | Endpoint | Description |
+|------|--------|------------|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | Login and receive JWT |
 
-Server generates JWT with id & role
+---
 
-Token is sent in Authorization: Bearer <token>
+### 🍭 Sweet Management APIs (Protected)
+| Method | Endpoint | Access | Description |
+|------|--------|--------|------------|
+| GET | `/api/sweets` | User/Admin | Fetch all sweets |
+| POST | `/api/sweets` | Admin | Add a new sweet |
+| PUT | `/api/sweets/:id` | Admin | Update sweet |
+| DELETE | `/api/sweets/:id` | Admin | Delete sweet |
 
-Middleware validates token on protected routes
+---
 
-#  📡 API Endpoints
-🔑 Auth Routes
-Method	Endpoint	Description
-POST	/api/auth/register	Register a new user
-POST	/api/auth/login	Login & receive JWT
-🍭 Sweet Routes (Protected)
-Method	Endpoint	Access	Description
-GET	/api/sweets	User/Admin	Get all sweets
-POST	/api/sweets	Admin	Add a new sweet
-PUT	/api/sweets/:id	Admin	Update sweet
-DELETE	/api/sweets/:id	Admin	Delete sweet
-📦 Inventory Routes
-Method	Endpoint	Access	Description
-POST	/api/sweets/:id/purchase	User	Purchase sweet
-POST	/api/sweets/:id/restock	Admin	Increase quantity
-🧪 Test-Driven Development (TDD)
+### 📦 Inventory APIs
+| Method | Endpoint | Access | Description |
+|------|--------|--------|------------|
+| POST | `/api/sweets/:id/purchase` | User | Purchase a sweet |
+| POST | `/api/sweets/:id/restock` | Admin | Restock sweet quantity |
 
-This project follows Red → Green → Refactor methodology.
+---
 
-Test Coverage Includes:
+### 🧪 Test-Driven Development (TDD)
+This backend follows **Red → Green → Refactor** methodology.
 
-User registration & login
+#### Covered Scenarios
+- User registration & login
+- JWT authentication validation
+- Role-based access checks
+- Inventory update logic
+- Edge cases (out of stock, unauthorized access)
 
-JWT authentication
+Tests are designed to validate **business logic**, not just endpoints.
 
-Role-based access
+---
 
-Inventory update logic
+### 🌍 CORS & Security
+- Strictly allowed frontend origins
+- Preflight OPTIONS handling
+- JWT protected routes
+- Password hashing using bcrypt
+- Secure environment variables
 
-Edge cases (out-of-stock, invalid token, unauthorized access)
+---
 
-Tests are written to ensure business logic correctness, not just coverage.
+### ⚙️ Environment Variables
+Create a `.env` file:
 
-🌍 CORS & Security
 
-Explicitly allowed frontend domains
-
-Handles preflight OPTIONS requests
-
-JWT-protected routes
-
-Password hashing with bcrypt
-
-No sensitive data exposed
-
-⚙️ Environment Variables
-
-Create a .env file:
 
 PORT=5002
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+JWT_SECRET=your_jwt_secret
 
-🚀 Running the Project Locally
+
+---
+
+### 🚀 Running Locally
+```bash
 # Install dependencies
 npm install
 
-# Start development server
+# Development
 npm run dev
 
 # Production
 npm start
 
 
-## Server runs at:
+Server runs at:
 
 http://localhost:5002
 
 ☁️ Deployment
 
-Backend: Render
+Platform: Render
 
-Environment variables configured via Render Dashboard
+Auto-deploy on Git push
 
-Auto-deploy enabled on git push
+Environment variables managed via Render dashboard
+
+Production-ready configuration
 
 🤖 My AI Usage
 Tools Used
@@ -182,18 +179,16 @@ How AI Was Used
 
 API design brainstorming
 
-Middleware logic refinement
+Middleware & JWT flow clarification
 
-Debugging CORS & JWT issues
+Debugging CORS & deployment issues
 
-Writing clean controller structure
-
-Improving README documentation
+Writing clean documentation
 
 Reflection
 
-## AI significantly improved development speed and debugging efficiency.
-However, all final logic, validations, and architectural decisions were manually reviewed and implemented to ensure correctness and understanding.
+AI significantly improved productivity and debugging speed.
+All final logic, validations, and architecture decisions were manually reviewed and implemented to ensure correctness and deep understanding.
 
 ✅ Conclusion
 
@@ -203,8 +198,8 @@ This backend is:
 
 ✔ Scalable
 
+✔ Role-aware
+
 ✔ Testable
 
 ✔ Production-ready
-
-It demonstrates real-world backend engineering practices, suitable for interviews and enterprise applications.
